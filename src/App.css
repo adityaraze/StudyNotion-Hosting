@@ -1,0 +1,103 @@
+
+html,body{
+    overflow-x: hidden;
+}
+
+.homepage_bg{
+  background-image: url("../src/assets/Images/bghome.svg");  
+}
+.cdb{
+  box-shadow: 10px 10px 5px 0px rgba(237,240,240,1);
+}
+.cdbb{
+  background: rgb(180,161,161);
+  background: radial-gradient(circle, rgba(180,161,161,1) 30%, rgba(253,45,45,0) 100%);
+  box-shadow: rgb(239, 235, 235) 0px 3px 8px;
+}
+.cdbb:hover{
+  scale: 0.95;
+  transition-duration:0.5s;
+}
+.timelineImage{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.insImg{
+  box-shadow: rgb(245, 241, 244) -5px 5px, rgb(247, 245, 246) -10px 10px, rgb(247, 243, 245) -15px 15px, rgb(247, 243, 245) -20px 20px, rgb(249, 247, 248) -25px 25px;
+}
+.bgYellow{
+  box-shadow: yellow 10px 10px;
+}
+.card{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%,#474bff);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
+}
+.txtgrad{
+  
+color: #cddc39; background-image: -webkit-linear-gradient(0deg, #cddc39 0%, #ff9800 50%, #cddc39 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
+          
+        
+}
+.form-style {
+  @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+}
+.blackButton {
+  @apply cursor-pointer rounded-md bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5;
+}
+.codeblock1 {
+  width: 372.95px;
+  height: 257.05px;
+  border-radius: 100%;
+  left: calc(50% - 372.95px / 2 - 76.53px);
+  top: calc(50% - 257.05px / 2 - 47.47px);
+  background: linear-gradient(
+    123.77deg,
+    #8a2be2 -6.46%,
+    #ffa500 59.04%,
+    #f8f8ff 124.53%
+  );
+  opacity: 0.2;
+  filter: blur(34px);
+  transform: matrix(1, 0, -0.03, 1, 0, 0);
+}
+.codeblock2 {
+  position: absolute;
+  width: 372.95px;
+  height: 257.05px;
+  left: calc(50% - 372.95px / 2 - 76.53px);
+  top: calc(50% - 257.05px / 2 - 47.47px);
+  border-radius: 100%;
+  background: linear-gradient(
+    118.19deg,
+    #1fa2ff -3.62%,
+    #12d8fa 50.44%,
+    #a6ffcb 104.51%
+  );
+  opacity: 0.2;
+  filter: blur(34px);
+  transform: matrix(1, 0, -0.03, 1, 0, 0);
+}
+.code-border {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to right bottom, #ffffff38, #ffffff00);
+  background: linear-gradient(
+    111.93deg,
+    rgba(14, 26, 45, 0.24) -1.4%,
+    rgba(17, 30, 50, 0.38) 104.96%
+  );
+  /* backdrop-filter: blur(26px); */
+}
