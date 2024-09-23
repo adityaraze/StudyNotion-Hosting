@@ -24,18 +24,23 @@ const ReviewSlider = () => {
   return (
     <div className="text-white">
     <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={25}
-        loop={true}
-        freeMode={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[FreeMode, Pagination, Autoplay]}
-        className="w-full "
-      >
+     <Swiper
+  spaceBetween={25}
+  loop={true}
+  freeMode={true}
+  autoplay={{
+    delay: 2500,
+    disableOnInteraction: false,
+  }}
+  breakpoints={{
+    640: { slidesPerView: 1 }, // Small screens (mobile)
+    768: { slidesPerView: 2 }, // Medium screens (tablet)
+    1024: { slidesPerView: 3 }, // Large screens (laptops)
+    1280: { slidesPerView: 4 }, // Extra large screens (desktops)
+  }}
+  modules={[FreeMode, Pagination, Autoplay]}
+  className="lg:w-full md:w-[800px]"
+>
         {reviews.map((review, i) => {
           return (
             <SwiperSlide key={i}>
