@@ -81,9 +81,9 @@ import { useSelector } from 'react-redux'
                       : `${review?.review}`}
                   </p>
                   <div className="flex items-center gap-2 ">
-                    <h3 className="font-semibold text-yellow-100">
-                      {review?.rating?.toFixed(1)}
-                    </h3>
+{/*                     <h3 className="font-semibold text-yellow-100">
+                      {review.rating.toFixed(1)}
+                    </h3> */}
                     <ReactStars
                       count={5}
                       value={review.rating}
