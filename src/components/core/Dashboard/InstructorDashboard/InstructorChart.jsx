@@ -54,7 +54,6 @@ Chart.register(...registerables);
     };
   return (
   
-
     <div className="flex flex-1 flex-col gap-y-4 rounded-md bg-richblack-800 p-6 lg:full md:full w-[200px] ">
         <p className='text-lg font-bold text-richblack-5'>Visualise</p>
         <div className='space-x-4 font-semibold'>
