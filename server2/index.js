@@ -18,11 +18,14 @@ dataBase.connect();
 app.use(express.json());
 app.use(cookieparser());
 // Define the CORS options
-const corsOptions = {
-    origin: 'http://localhost:3000', // Allow requests from this origin
-    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-  
+// const corsOptions = {
+//     origin: 'http://localhost:3000', // Allow requests from this origin
+//     optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+//   };
+  const corsOptions = {
+  origin: 'https://study-notion-frontend-theta-liard.vercel.app', // Allow requests from this origin
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
   // Use the CORS middleware with the specified options
   app.use(cors(corsOptions));
 
