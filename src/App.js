@@ -5,7 +5,7 @@ import Navbar from "../src/components/Common/Navbar";
 import Signup from "../src/Pages/Signup";
 import Login from "../src/Pages/Login";
 import About from "./Pages/About";
-import Contact from "./components/ContactPage/ContactUsForm"
+import {Contact} from "./Pages/Contact"
 import ForgotPassword from "./Pages/ForgotPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
 import OpenRoute from "./components/core/Auth/OpenRoute";

@@ -51,7 +51,7 @@ function CourseDetailsCard({response, setConfirmationModal, handleBuyCourse}) {
             </div>
             <div className='flex flex-col gap-y-6 items-center'>
                 <button
-                 className='bg-yellow-50 w-fit text-richblack-900 lg:w-[336px] px-[12px] py-[6px] rounded-[8px]'
+                 className='yellowButton'
                     onClick={
                         user && response?.studentEnrolled.includes(user?._id)
                         ? ()=> navigate("/dashboard/enrolled-courses")
@@ -66,7 +66,7 @@ function CourseDetailsCard({response, setConfirmationModal, handleBuyCourse}) {
                 {
                     (!response?.studentEnrolled.includes(user?._id)) && (
                         <button onClick={handleAddToCart}  
-                        className='bg-[#161D29] w-fit text-[#f1f2ff] lg:w-[336px] px-[12px] py-[6px] rounded-[8px]'>
+                        className='blackButton'>
                             Add to Cart
                         </button>
                     )

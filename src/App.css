@@ -101,3 +101,11 @@ color: #cddc39; background-image: -webkit-linear-gradient(0deg, #cddc39 0%, #ff9
   );
   /* backdrop-filter: blur(26px); */
 }
+
+.yellowButton {
+  @apply cursor-pointer rounded-md bg-yellow-50 px-[20px] py-[8px] font-semibold text-richblack-900;
+}
+.blackButton {
+  @apply cursor-pointer rounded-md bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5  shadow-[-2px_-2px_0px_0px_#FFFFFF2E_inset]
+  
+}

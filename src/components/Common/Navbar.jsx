@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, matchPath } from "react-router-dom";
+import { Link, matchPath, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
 import { NavbarLinks } from "../../data/navbar-links";
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
 import ProfileDropDown from "../../components/core/Auth/ProfileDropDown";
 import { apiConnector } from "../../services/apiConnector";
@@ -11,14 +11,18 @@ import { categories } from "../../services/apis";
 import { IoIosArrowDown } from "react-icons/io";
 import toast from "react-hot-toast";
 import { ACCOUNT_TYPE } from "../../utils/constant";
+import { ConfirmationModalNavbar } from './ConfirmationModalNavbar'
+import { NavbrModal } from './NavbrModal'
 const Navbar = (props) => {
-  const { token } = useSelector((state) => state.auth);
-  const { user } = useSelector((state) => state.profile);
-  const { totalItems } = useSelector((state) => state.cart);
+  const { token } = useSelector((state) => state.auth)
+  const { user } = useSelector((state) => state.profile)
+  const { totalItems } = useSelector((state) => state.cart)
+  const location = useLocation()
+  const [confirmationModalNav, setConfirmationModalNav] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
-  const location = useLocation();
-
-    const [subLinks, setSubLinks] = useState([]);
 
     const fetchSublinks = async () => {
       setLoading(true)
@@ -45,6 +49,7 @@ const Navbar = (props) => {
         location.pathname !== "/" ? "bg-richblack-800" : ""
       } transition-all duration-200`}
     >
+       {confirmationModalNav && <NavbrModal  setConfirmationModalNav = {setConfirmationModalNav}/>}
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
@@ -113,7 +118,7 @@ const Navbar = (props) => {
           </ul>
         </nav>
         {/* Login / Signup / Dashboard */}
-        <div className="hidden items-center gap-x-4 md:flex">
+        <div className=" items-center lg:gap-x-4 md:gap-x-4   gap-x-3 flex lg:flex md:flex">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
@@ -140,8 +145,10 @@ const Navbar = (props) => {
           )}
           {token !== null && <ProfileDropDown />}
         </div>
-        <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+        <button className="mr-4 md:hidden lg:hidden   "
+     onClick={()=>setConfirmationModalNav((true))}
+        >
+          <AiOutlineMenu fontSize={30} fill="#AFB2BF" />
         </button>
       </div>
     </div>
