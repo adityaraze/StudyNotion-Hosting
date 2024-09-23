@@ -22,8 +22,8 @@ const ReviewSlider = () => {
         fetchAllReviews();
     },[])
   return (
-    <div className="text-white">
-    <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
+    <div className=" ">
+    <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent ">
      <Swiper
   spaceBetween={25}
   loop={true}
@@ -44,7 +44,7 @@ const ReviewSlider = () => {
         {reviews.map((review, i) => {
           return (
             <SwiperSlide key={i}>
-              <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
+              <div className=" flex flex-col gap-3 bg-richblack-800 p-4 text-[14px] text-richblack-25 lg:h-[192px] md:h-[192px] lg:w-[300px] md:w-[300px] h-[192px] w-[300px] ">
                 <div className="flex items-center gap-4">
                   <img
                     src={
