@@ -57,7 +57,7 @@ useEffect(() => {
     );
     const currentSubSectionIndex = courseSectionData[
       currentSectionIndex
-    ].SubSection.findIndex((data) => data._id === subSectionId);
+    ].SubSection?.findIndex((data) => data._id === subSectionId);
 
     if (currentSectionIndex === 0 && currentSubSectionIndex === 0) {
       return true;
@@ -70,10 +70,10 @@ useEffect(() => {
       (data) => data._id === sectionId
     );
     const noOfSection =
-      courseSectionData[currentSectionIndex].SubSection.length;
+      courseSectionData[currentSectionIndex].SubSection?.length;
     const currentSubSectionIndex = courseSectionData[
       currentSectionIndex
-    ].SubSection.findIndex((data) => data._id === subSectionId);
+    ].SubSection?.findIndex((data) => data._id === subSectionId);
 
     if (
       currentSectionIndex === courseSectionData.length - 1 &&
@@ -89,10 +89,10 @@ useEffect(() => {
       (data) => data._id === sectionId
     );
     const noOfSection =
-      courseSectionData[currentSectionIndex].SubSection.length;
+      courseSectionData[currentSectionIndex].SubSection?.length;
     const currentSubSectionIndex = courseSectionData[
       currentSectionIndex
-    ].SubSection.findIndex((data) => data._id === subSectionId);
+    ].SubSection?.findIndex((data) => data._id === subSectionId);
 
     if (currentSubSectionIndex !== noOfSection - 1) {
       // same section ki next video
@@ -108,7 +108,7 @@ useEffect(() => {
       // different section ki first video
       const nextSectionId = courseSectionData[currentSectionIndex + 1]._id;
       const nextSubSectionId =
-        courseSectionData[currentSectionIndex + 1].SubSection[0]._id;
+        courseSectionData[currentSectionIndex + 1].SubSection?[0]._id;
       // is video pr chale jao
       navigate(
         `/view-course/${courseId}/section/${nextSectionId}/sub-section/${nextSubSectionId}`
@@ -119,9 +119,9 @@ useEffect(() => {
     const currentSectionIndex = courseSectionData.findIndex(
       (data) => data._id === sectionId
     );
-    const noOfSubSection = courseSectionData[currentSectionIndex].SubSection.length;
+    const noOfSubSection = courseSectionData[currentSectionIndex].SubSection?.length;
     
-    const currentSubSectionIndex = courseSectionData[currentSectionIndex].SubSection.findIndex((data) => data._id === subSectionId);
+    const currentSubSectionIndex = courseSectionData[currentSectionIndex].SubSection?.findIndex((data) => data._id === subSectionId);
 
     if(currentSectionIndex !== 0){
       // same section but previous video pr jao
@@ -133,7 +133,7 @@ useEffect(() => {
     else{
      //different section , last video
      const prevSectionId = courseSectionData[currentSectionIndex - 1]._id;
-     const prevSubSectionLength = courseSectionData[currentSectionIndex - 1].SubSection.length;
+     const prevSubSectionLength = courseSectionData[currentSectionIndex - 1].SubSection?.length;
      const prevSubSectionId = courseSectionData[currentSectionIndex - 1].SubSection[prevSubSectionLength - 1]._id;
      //iss video par chalge jao
      navigate(`/view-course/${courseId}/section/${prevSectionId}/sub-section/${prevSubSectionId}`)
