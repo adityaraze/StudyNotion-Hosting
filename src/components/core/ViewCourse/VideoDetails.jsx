@@ -6,7 +6,7 @@ import { updateCompletedLectures } from "../../../slices/viewCourseSlice";
 import 'video-react/dist/video-react.css'
 import { BigPlayButton, Player } from "video-react"
 import IconBtn from "../../Common/IconBtn";
-export const VideoDetails = () => {
+const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams();
   const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -220,4 +220,6 @@ export const VideoDetails = () => {
     <p className="pt-2 pb-6">{videoData?.description}</p>
   </div>);
 };
+
+export default VideoDetails;
 
