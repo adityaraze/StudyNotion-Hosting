@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,useNavigate } from "react-router-dom";
 import "./App.css";
 import Home from "../src/Pages/Home";
 import Navbar from "../src/components/Common/Navbar";
@@ -27,6 +27,8 @@ import CourseDetails from "./Pages/CourseDetails";
 import ViewCourse from "./Pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import { getUserDetails } from "./services/operations/profileAPI";
+import { useEffect } from "react";
 function App() {
   const dispatch  = useDispatch();
   const navigate = useNavigate();
