@@ -13,6 +13,8 @@ const VideoDetailsSidebar = ({ setReviewModal }) => {
   const [modal, setModal] = useState(false); // Simplified default value
   const navigate = useNavigate();
   const { sectionId, subSectionId } = useParams();
+  console.log("sectionId VDS = ",sectionId);
+          console.log("subSectionId VDS = ",subSectionId);
   const location = useLocation();
 
   const {
