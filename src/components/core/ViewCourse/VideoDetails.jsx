@@ -103,7 +103,7 @@ const VideoDetails = () => {
       // different section ki first video
       const nextSectionId = courseSectionData[currentSectionIndex + 1]._id;
       const nextSubSectionId =
-        courseSectionData[currentSectionIndex + 1].SubSection?[0]._id;
+        courseSectionData[currentSectionIndex + 1].SubSection[0]._id;
       // is video pr chale jao
       navigate(
         `/view-course/${courseId}/section/${nextSectionId}/sub-section/${nextSubSectionId}`
