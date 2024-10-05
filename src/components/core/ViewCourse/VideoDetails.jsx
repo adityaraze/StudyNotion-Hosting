@@ -5,9 +5,9 @@ import { markLectureAsComplete } from '../../../services/operations/courseDetail
 import { updateCompletedLectures } from '../../../slices/viewCourseSlice';
 import { BigPlayButton, Player } from 'video-react';
 import 'video-react/dist/video-react.css';
-import { FaPlay } from 'react-icons/fa6';
+// import { FaPlay } from 'react-icons/fa6';
 import { IconBnt } from '../../common/IconBnt';
-import { AiFillPlayCircle } from 'react-icons/ai';
+// import { AiFillPlayCircle } from 'react-icons/ai';
 
 
 export const VideoDetails = () => {
