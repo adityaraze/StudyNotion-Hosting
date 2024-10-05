@@ -38,7 +38,7 @@ const VideoDetails = () => {
             )
 
             setVideoData(filteredVideoData[0]);
-            setPreviewSource(courseEntireData.thumbnail)
+            setPreviewSource(courseEntireData.thumbnail);
             setVideoEnded(false);
 
         }
