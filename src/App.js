@@ -18,7 +18,6 @@ import Error from "./Pages/Error"
 import EnrolledCourse from "./components/core/Dashboard/EnrolledCourse";
 import Cart from "./components/core/Dashboard/Cart/index";
 import {ACCOUNT_TYPE} from "../src/utils/constant"
-import { useSelector } from "react-redux";
 import Settings from "./components/core/Dashboard/Settings";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
