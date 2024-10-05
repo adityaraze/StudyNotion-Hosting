@@ -28,6 +28,8 @@ const VideoDetails = () => {
         }
         else {
             //let's assume k all 3 fields are present
+          console.log("sectionId = ",sectionId);
+          console.log("subSectionId = ",subSectionId);
             console.log("Course Sec Data .,",courseSectionData)
             const filteredData = courseSectionData.filter(
                 (course) => course._id === sectionId
