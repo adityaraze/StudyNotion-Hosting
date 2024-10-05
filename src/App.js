@@ -7,6 +7,7 @@ import Login from "../src/Pages/Login";
 import About from "./Pages/About";
 import {Contact} from "./Pages/Contact"
 import ForgotPassword from "./Pages/ForgotPassword";
+
 import UpdatePassword from "./Pages/UpdatePassword";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import VerifyEmail from "./Pages/VerifyEmail";
@@ -29,6 +30,7 @@ import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import { getUserDetails } from "./services/operations/profileAPI";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch  = useDispatch();
   const navigate = useNavigate();
