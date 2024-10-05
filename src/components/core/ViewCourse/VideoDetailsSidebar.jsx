@@ -4,9 +4,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import IconBtn from '../../Common/IconBtn'; // Corrected typo in component name
 import { IoIosArrowBack } from 'react-icons/io';
 import { BsChevronDown } from 'react-icons/bs';
-import { VideoDetails } from './VideoDetails';
+import  VideoDetails  from './VideoDetails';
 import { VideoModal } from '../../Common/VideoModal';
-import { AiOutlineMenu } from 'react-icons/ai';
+// import { AiOutlineMenu } from 'react-icons/ai';
 
 const VideoDetailsSidebar = ({ setReviewModal }) => {
   const [activeStatus, setActiveStatus] = useState('');
