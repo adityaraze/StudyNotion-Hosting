@@ -103,7 +103,7 @@ const VideoDetailsSidebar = ({ setReviewModal }) => {
                   {/* Sub Sections */}
                   {activeStatus === course?._id && (
                     <div className="transition-[height] duration-500 ease-in-out">
-                      {course.subSection?.map((topic, i) => (
+                      {course.SubSection?.map((topic, i) => (
                         <div
                           className={`flex gap-3 px-5 py-2 ${
                             videobarActive === topic._id
