@@ -18,34 +18,39 @@ const VideoDetails = () => {
   const [videoData, setVideoData] = useState([]);
   const [videoEnded, setVideoEnded] = useState(false);
   const [loading, setLoading] = useState(false);
-  useEffect(()=> {
-
-    const setVideoSpecificDetails = async() => {
-        if(!courseSectionData.length)
-            return;
-        if(!courseId && !sectionId && !subSectionId) {
-            navigate("/dashboard/enrolled-courses");
-        }
-        else {
-            //let's assume k all 3 fields are present
-            console.log("Course Sec Data .,",courseSectionData)
-            const filteredData = courseSectionData.filter(
-                (course) => course._id === sectionId
-            )
-          console.log("filterData = ",filterData);
-            const filteredVideoData = filteredData?.[0].SubSection?.filter(
-                (data) => data._id === subSectionId
-            )
-
-            setVideoData(filteredVideoData[0]);
-            setPreviewSource(courseEntireData.thumbnail)
-            setVideoEnded(false);
-
-        }
+useEffect(() => {
+  const setVideoSpecificDetails = async () => {
+    if (!courseSectionData.length) return;
+    if (!courseId || !sectionId || !subSectionId) {
+      navigate("/dashboard/enrolled-courses");
+      return;
     }
-    setVideoSpecificDetails();
 
-  },[courseSectionData, courseEntireData, location.pathname])
+    // Filter the data for the specific section
+    const filteredData = courseSectionData.filter(
+      (course) => course._id === sectionId
+    );
+    if (filteredData.length === 0 || !filteredData[0].SubSection) {
+      console.log("No matching section or subsection found.");
+      return;
+    }
+
+    const filteredVideoData = filteredData[0].SubSection.filter(
+      (data) => data._id === subSectionId
+    );
+
+    if (filteredVideoData.length === 0) {
+      console.log("No matching video found.");
+      return;
+    }
+
+    setVideoData(filteredVideoData[0]);
+    setPreviewSource(courseEntireData.thumbnail);
+    setVideoEnded(false);
+  };
+
+  setVideoSpecificDetails();
+}, [courseSectionData, courseEntireData, location.pathname]);
   const isFirstVideo = () => {
     const currentSectionIndex = courseSectionData.findIndex(
       (data) => data._id === sectionId
