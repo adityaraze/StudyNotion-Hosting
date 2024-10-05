@@ -32,7 +32,7 @@ const VideoDetails = () => {
             const filteredData = courseSectionData.filter(
                 (course) => course._id === sectionId
             )
-
+          console.log("filterData = ",filterData);
             const filteredVideoData = filteredData?.[0].SubSection?.filter(
                 (data) => data._id === subSectionId
             )
