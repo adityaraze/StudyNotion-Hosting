@@ -16,6 +16,7 @@ const VideoDetailsSidebar = ({ setReviewModal }) => {
   console.log("sectionId VDS = ",sectionId);
   console.log("subSectionId VDS = ",subSectionId);
   const location = useLocation();
+  const value = false;
 
     const setThvale = (value) =>{
       if(value === false){
@@ -180,7 +181,7 @@ const VideoDetailsSidebar = ({ setReviewModal }) => {
             >
               <IoIosArrowBack size={30} />
             </div>
-            <IconBnt
+            <IconBtn
               text="Add Review"
               customClasses="ml-auto"
               onclick={() => setReviewModal(true)}
