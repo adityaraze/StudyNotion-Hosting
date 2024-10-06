@@ -12,24 +12,38 @@ export default function EnrolledCourses() {
 
   const [enrolledCourses, setEnrolledCourses] = useState(null)
 
+  // useEffect(() => {
+  //   ;(async () => {
+  //     try {
+  //       const res = await getUserEnrolledCourses(token) // Getting all the published and the drafted courses
+
+  //       // Filtering the published course out
+  //       const filterPublishCourse = res.filter((ele) => ele.status !== "Draft")
+  //       // console.log(
+  //       //   "Viewing all the couse that is Published",
+  //       //   filterPublishCourse
+  //       // )
+
+  //       setEnrolledCourses(filterPublishCourse)
+  //     } catch (error) {
+  //       console.log("Could not fetch enrolled courses.")
+  //     }
+  //   })()
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
+
+  const getEnrolledCourses = async () => {
+    try {
+      const res = await getUserEnrolledCourses(token);
+
+      setEnrolledCourses(res);
+      console.log("enrolled Courses = ",enrolledCourses);
+    } catch (error) {
+      console.log("Could not fetch enrolled courses.")
+    }
+  };
   useEffect(() => {
-    ;(async () => {
-      try {
-        const res = await getUserEnrolledCourses(token) // Getting all the published and the drafted courses
-
-        // Filtering the published course out
-        const filterPublishCourse = res.filter((ele) => ele.status !== "Draft")
-        // console.log(
-        //   "Viewing all the couse that is Published",
-        //   filterPublishCourse
-        // )
-
-        setEnrolledCourses(filterPublishCourse)
-      } catch (error) {
-        console.log("Could not fetch enrolled courses.")
-      }
-    })()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getEnrolledCourses();
   }, [])
 
   return (
