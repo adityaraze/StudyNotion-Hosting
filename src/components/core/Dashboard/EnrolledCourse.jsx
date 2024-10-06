@@ -23,7 +23,7 @@ export default function EnrolledCourses() {
           "Viewing all the couse that is Published",
           filterPublishCourse
         )
-
+        
         setEnrolledCourses(filterPublishCourse)
       } catch (error) {
         console.log("Could not fetch enrolled courses.")
@@ -45,7 +45,7 @@ export default function EnrolledCourses() {
   // useEffect(() => {
   //   getEnrolledCourses();
   // }, [])
-
+console.log("enrolledCourses = "enrolledCourses);
   return (
     <>
       <div className="text-3xl text-richblack-50">Enrolled Courses</div>
