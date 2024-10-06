@@ -45,7 +45,7 @@ export default function EnrolledCourses() {
   // useEffect(() => {
   //   getEnrolledCourses();
   // }, [])
-console.log("enrolledCourses = "enrolledCourses);
+console.log("enrolledCourses = ",enrolledCourses);
   return (
     <>
       <div className="text-3xl text-richblack-50">Enrolled Courses</div>
