@@ -135,7 +135,7 @@ exports.getEnrolledCourses = async (req, res) => {
         },
       })
       .exec()
-    userDetails = userDetails.toObject()
+    // userDetails = userDetails.toObject()
       // .populate("courses")
       // .exec();
     if (!userDetails) {
