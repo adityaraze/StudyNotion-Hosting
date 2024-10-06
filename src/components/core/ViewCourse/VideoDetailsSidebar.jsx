@@ -261,6 +261,7 @@ const VideoDetailsSidebar = ({ setReviewModal }) => {
           </div>
       </>
   )
+};
 
 export default VideoDetailsSidebar;
     
