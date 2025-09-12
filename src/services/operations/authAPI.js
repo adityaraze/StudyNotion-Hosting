@@ -52,10 +52,12 @@ export function signUp(
   navigate
 ) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...")
-    dispatch(setLoading(true))
+    const toastId = toast.loading("Signing up...");
+    dispatch(setLoading(true));
+
     try {
-      const response = await apiConnector("POST", SIGNUP_API, {
+      // Payload
+      const payload = {
         accountType,
         firstName,
         lastName,
@@ -63,23 +65,37 @@ export function signUp(
         password,
         confirmPassword,
         otp,
-      })
+      };
 
-      console.log("SIGNUP API RESPONSE............", response)
+      console.log("Signup Payload:", payload);
+
+      const response = await apiConnector("POST", SIGNUP_API, payload);
+
+      console.log("SIGNUP API RESPONSE:", response);
 
       if (!response.data.success) {
-        throw new Error(response.data.message)
+        throw new Error(response.data.message || "Signup failed");
       }
-      toast.success("Signup Successful")
-      navigate("/login")
+
+      toast.success("Signup Successful");
+      // Navigate to login after success
+      navigate("/login");
     } catch (error) {
-      console.log("SIGNUP API ERROR............", error)
-      toast.error("Signup Failed")
-      navigate("/signup")
+      // Log exact backend error
+      console.error(
+        "SIGNUP API ERROR:",
+        error.response?.data || error.message
+      );
+
+      // Show server validation message if available
+      toast.error(error.response?.data?.message || "Signup Failed");
+      // Optional: do not navigate automatically, let user fix input
+      // navigate("/signup");
+    } finally {
+      dispatch(setLoading(false));
+      toast.dismiss(toastId);
     }
-    dispatch(setLoading(false))
-    toast.dismiss(toastId)
-  }
+  };
 }
 
 export function login(email, password, navigate) {
