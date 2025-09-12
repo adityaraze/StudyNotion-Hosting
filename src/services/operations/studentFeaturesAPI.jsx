@@ -158,26 +158,50 @@ async function sendPaymentSuccessEmail(response,amount,token){
 
 // verify payment
 
-async function verifyPayment(bodyData,token,navigate,dispatch){
-    const toastId = toast.loading("Verifying Payment...");
+// async function verifyPayment(bodyData,token,navigate,dispatch){
+//     const toastId = toast.loading("Verifying Payment...");
+//     dispatch(setPaymentLoading(true));
+//     try{
+//         const response = await apiConnector("POST",COURSE_VERIFY_API,bodyData,{
+//             Authorization:`Bearer ${token}`
+//         })
+
+//         if(!response.data.success){
+//             throw new Error(response.data.message);
+//         }
+//         toast.success("Payment Successfull,You are added to the course");
+//         navigate("/dashboard/enrolled-courses");
+//         dispatch(resetCart());
+//     }
+//     catch(error){
+//         console.log("Payment verify error",error.message);
+//         toast.error("clould not verify payment");
+         
+//     }
+//     toast.dismiss(toastId);
+//     dispatch(setPaymentLoading(false));
+// }
+async function verifyPayment(bodyData,token ,navigate,dispatch){
+   const toastId = toast.loading("Verifying Payment...");
     dispatch(setPaymentLoading(true));
-    try{
-        const response = await apiConnector("POST",COURSE_VERIFY_API,bodyData,{
-            Authorization:`Bearer ${token}`
+    
+    try {
+        const response = await apiConnector("POST",COURSE_VERIFY_API,bodyData ,{
+            Authorization: `Bearer ${token}`,
         })
 
         if(!response.data.success){
             throw new Error(response.data.message);
+
         }
-        toast.success("Payment Successfull,You are added to the course");
+        toast.success("payment successful, you are added to the course");
         navigate("/dashboard/enrolled-courses");
         dispatch(resetCart());
-    }
-    catch(error){
-        console.log("Payment verify error",error.message);
-        toast.error("clould not verify payment");
-         
+    } catch (error) {
+        console.log("Payment verify error.." , error);
+        toast.error("could not verify payment");
     }
     toast.dismiss(toastId);
-    dispatch(setPaymentLoading(false));
+    dispatch(setPaymentLoading(false))
 }
+
