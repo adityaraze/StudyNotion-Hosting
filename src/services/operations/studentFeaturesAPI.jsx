@@ -45,7 +45,7 @@ export async function buyCourse(token,courses,userDetails,navigate,dispatch) {
         console.log("PRINTING ORDER DATA RESPONSE -> ",orderResponse);
         //options
         const options = {
-            kry:process.env.RAZORPAY_KEY,
+            kry:process.env.REACT_APP_RAZORPAY_KEY,
             currency:orderResponse.data.message.currency,
             amount:`${orderResponse.data.message.amount}`,
             order_id:orderResponse.data.message.id,
