@@ -28,8 +28,8 @@ const Navbar = (props) => {
       setLoading(true)
       try {
         const result = await apiConnector("GET", categories.CATEGORIES_API);
-        console.log("Printing sublinks results ", result.data.data);
-        setSubLinks(result.data.data);  // Adjust based on actual response structure
+        console.log("Printing sublinks results ", result.data.allTags);
+        setSubLinks(result.data.allTags);  // Adjust based on actual response structure
       } catch (err) {
         console.error("Could not fetch the category list.", err);  // Enhanced logging
       }
